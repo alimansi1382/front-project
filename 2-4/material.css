@@ -1,0 +1,38 @@
+button.outline
+{
+	min-width:64px;
+	border-radius: 4px;
+	height:36px;
+	color:purple;
+	background:white;
+	border:1px solid purple;
+	padding:8px 16px;
+	font-weight:bold;
+	
+}
+button.outline:hover{
+	background:purple;
+	color:white;
+}
+button.outline-icon
+{
+	min-width:64px;
+	border-radius: 4px;
+	height:36px;
+	color:purple;
+	background:white;
+	border:1px solid purple;
+	padding:8px 16px;
+	padding-left:12px;
+	font-weight:bold;
+	
+}
+button.outline-icon i{
+	width:18px;
+	height:18px;
+	margin-right:8px;
+}
+button.outline-icon:hover{
+	background:purple;
+	color:white;
+}
