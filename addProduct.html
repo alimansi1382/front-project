@@ -13,39 +13,39 @@
         <div id="newProduct">
             <div id="form_title">فرم اضافه کردن محصول</div>
             <hr>
-            <form action="#" method="post" id="newProduct_form">
+            <form action="./addProduct.php" method="post" id="newProduct_form">
                 <div class="input_sections">
                     <label for="product_name">نام محصول:</label>
                     <br>
-                    <input type="text" name="product_name" id="product_name" class="newproduct_input">
+                    <input type="text" required name="product_name" id="product_name" class="newproduct_input">
                 </div>
                <div class="input_sections">
                   <label for="product_catg">دسته ی محصول :</label>
                   <br>
-                  <select name="product_catg" id="product_catg" class="newproduct_input">
-                  <option value="bnr">بنر</option>
-                  <option value="gls">لیوان</option>
-                  <option value="tks">تخته شاسی</option>
-                  <option value="stk">استیکر</option>
-                  <option value="hat">کلاه</option>
+                  <select name="product_catg" id="product_catg" required class="newproduct_input">
+                    <option value="bnr">بنر</option>
+                    <option value="gls">لیوان</option>
+                    <option value="tks">تخته شاسی</option>
+                    <option value="stk">استیکر</option>
+                    <option value="hat">کلاه</option>
                   </select>
                </div>
                <div class="input_sections">
                   <label for="price_component">مولفه قیمتی :</label>
                   <br>
                   <label for="pices">دانه ای</label>
-                  <input type="radio" name="price_component" value="pices" id="pices" class="newproduct_input">
+                  <input type="radio" required name="price_component" value="pices" id="pices" class="newproduct_input">
                   <label for="metric">متری</label>
-                  <input type="radio" name="price_component" value="metric" id="metric" class="newproduct_input">
-                  
+                  <input type="radio" required name="price_component" value="metric" id="metric" class="newproduct_input">
+                  <br>
                   <label for="product_price">قیمت بر اساس مولفه قیمتی :</label>
                     <br>
-                    <input type="number" name="product_price" id="product_price" class="newproduct_input"> ريال
+                    <input type="number" required name="product_price" id="product_price" class="newproduct_input"> ريال
                </div>
                <div class="input_sections">
                   <label for="product_image">تصویر محصول (امکان انتخاب چند عکس):</label>
                   <br>
-                  <input type="file" name="product_image" id="product_image" class="newproduct_input" multiple>
+                  <input type="file" required name="product_image" id="product_image" class="newproduct_input" multiple>
               </div>
               <div class="input_sections">
                <label for="product_service">خدمات اضافه بر محصول :</label>
@@ -76,20 +76,6 @@
                    <div class="service_item">
                        <label for="icon_servic">ایکون خدمات(اختیاری) :</label><br>
                        <input type="file" name="icon_servic" id="icon_servic">
-                   </div>
-               </ul>
-               <ul class="service_list">
-                   <div class="service_item">
-                       <label for="name_servic">اسم خدمات :</label><br>
-                       <input type="text" name="name_servic[]" id="name_servic">
-                   </div>
-                   <div class="service_item">
-                       <label for="price_servic">قیمت واحد خدمات :</label><br>
-                       <input type="number" name="price_servic[]" id="price_servic">
-                   </div>
-                   <div class="service_item">
-                       <label for="icon_servic">ایکون خدمات(اختیاری) :</label><br>
-                       <input type="file" name="icon_servic[]" id="icon_servic">
                    </div>
                </ul>
            </div>

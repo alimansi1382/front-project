@@ -1,0 +1,12 @@
+@import url('./templates/main.css');
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir.ttf');
+}
+:lang('fa'){
+    direction: rtl;
+}
+body{
+    font-family: vazir;
+    direction: rtl;
+}
