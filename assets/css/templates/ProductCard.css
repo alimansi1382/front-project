@@ -1,3 +1,4 @@
+
 .card{
     width: 18rem;
     display: inline-block;
@@ -44,4 +45,9 @@
     color: #6750A4;
     background-color: #FFFFFF;
     border: 1px solid gray;
+}
+.cards-section{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-top: 10px;
 }
