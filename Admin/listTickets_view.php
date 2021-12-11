@@ -14,7 +14,7 @@ $catg = array('bnr' => 'بنر','lva' => 'لیوان');
 <body lang="fa">
   <div class="C-container">
   <a  href="../addTicket_controller.php">اضافه کردن درخواست+</a>
-  <table class="tabel">
+  <table class="table">
         <tr>
           <th>شناسه</th>
           <th>عنوان مشکل</th>

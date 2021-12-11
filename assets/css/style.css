@@ -1,12 +1,22 @@
 @import url('./templates/main.css');
+@import url('./header.css');
+@import url('./navigation-bar.css');
+@import url('./footer.css');
+@import url('./container.css');
+@import url('./sidbar.css');
+@import url('./grid-template.css');
+
 @font-face {
     font-family: Vazir;
     src: url('../fonts/Vazir.ttf');
 }
-:lang('fa'){
+:lang(fa){
     direction: rtl;
 }
 body{
+    background-color: gainsboro;
+    margin: 0;
+}
+body,select,input{
     font-family: vazir;
-    direction: rtl;
 }

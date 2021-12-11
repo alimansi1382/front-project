@@ -8,4 +8,5 @@
 }
 .swiper>.swiper-wrapper>.swiper-slide{
   background-image: url('../assets/images/livan.jpg');
+  border-radius: 8px;
 }

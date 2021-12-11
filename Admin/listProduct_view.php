@@ -14,7 +14,7 @@ $catg = array('bnr' => 'بنر','lva' => 'لیوان');
 <body lang="fa">
   <div class="C-container">
   <a  href="../addProduct.php">اضافه کردن محصول+</a>
-  <table class="tabel">
+  <table class="table">
         <tr>
           <th>شناسه</th>
           <th>تصویر</th>

@@ -10,7 +10,7 @@
 <body lang="fa">
   <div class="C-container">
   <a  href="../addUser_controller.php">اضافه کردن کاربر+</a>
-  <table class="tabel">
+  <table class="table">
         <tr>
           <th>شناسه</th>
           <th>نام</th>

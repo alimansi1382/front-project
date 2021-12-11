@@ -1,0 +1,14 @@
+#navigation-bar{
+    display: grid;
+    background-color: gray;
+    height: 40px;
+}
+.nav-linkes{
+
+}
+.nav-link{
+
+}
+.link{
+    display: inline-block;
+}
