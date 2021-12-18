@@ -3,7 +3,6 @@ a{
 }
 #header{
     background-color: white;
-    margin-bottom: 24px;
     display: grid;
     grid-template-columns: 92% 8%;
     padding: 8px 24px;

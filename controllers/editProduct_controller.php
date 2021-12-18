@@ -1,10 +1,20 @@
 <?php
-include_once('../db.php');
+require_once('../db.php');
 $id = $_GET["id"];
 $mysql = new db('localhost','root','','frontproject');
+error_reporting(E_ALL & ~E_NOTICE);
+if (!isset($_POST['submit'])) 
+{
+	$query = "SELECT * FROM `product` WHERE id = {$id}";
+	$result = $mysql->query($query)->fetchArray();
 
+	$mysql = new db('localhost','root','','frontproject');
+	$query = "SELECT * FROM `services` WHERE product_id = {$id}";
+	$services = $mysql->query($query)->fetchAll();
 
-if (isset($_POST['submit'])) {
+    include_once('../views/editProduct_view.php');
+}
+else {
 	$query = "UPDATE `product` SET `name`='{$_POST['product_name']}',
 	`catg`='{$_POST['product_catg']}',`price_component`='{$_POST['price_component']}',
 	`price`={$_POST['product_price']}";
@@ -29,14 +39,5 @@ if (isset($_POST['submit'])) {
 		echo "<br>";
 		echo "Success";
 	}
-} else {
-	$query = "SELECT * FROM `product` WHERE id = {$id}";
-	$result = $mysql->query($query)->fetchArray();
-
-	$mysql = new db('localhost','root','','frontproject');
-	$query = "SELECT * FROM `services` WHERE product_id = {$id}";
-	$services = $mysql->query($query)->fetchAll();
-
-	include('../views/editProduct_view.php');
 }
 

@@ -1,14 +1,18 @@
 #navigation-bar{
     display: grid;
     background-color: gray;
-    height: 40px;
+    margin-bottom: 12px;
 }
-.nav-linkes{
-
+.list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
-.nav-link{
-
+.list_item{
+    display: inline-block;
+    padding: 8px;
 }
 .link{
-    display: inline-block;
+    display: block;
+    color: whitesmoke;
 }
