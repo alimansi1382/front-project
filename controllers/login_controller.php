@@ -1,16 +1,10 @@
 <?php
+require_once("__init__.php");
 
 if (!isset($_POST['submit'])) {
     include_once('../views/login_view.php');
 }else {
-    session_start();
-    $plugins = glob('../*_plugin.php');
-
-    foreach ($plugins as $plugin) {
-        include_once($plugin);
-    }
-
-    $cdb = new db('localhost','root','','frontproject');
+    $cdb = new db($dbhost,$dbusername,$dbpassword,$dbname);
     
     $query = "SELECT * FROM `user` WHERE `email`='{$_POST['email']}' AND `password` = '{$_POST['password']}';";
     $result = $cdb -> query($query)->fetchArray();

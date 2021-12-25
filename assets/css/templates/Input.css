@@ -34,3 +34,7 @@
     outline: 5px solid lightblue;
     border: 2px solid rgb(34, 144, 180);
 }
+/* Section */
+.input_sections{
+    margin: 7px 0;
+}

@@ -1,11 +1,12 @@
 <?php
-
-if (isset($_SESSION['id']) and $_SESSION['role']===1) {
-	require_once('../db.php');
+require_once("__init__.php");
+if (isset($_SESSION['id']) and $_SESSION['role']===1) 
+{
+	require_once("__init__.php");
 	$id = $_GET["id"];
-	$mysql = new db('localhost','root','','frontproject');
-	error_reporting(E_ALL & ~E_NOTICE);
+	$mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
 	if (!isset($_POST['submit'])) 
+	//View
 	{
 		$query = "SELECT * FROM `product` WHERE id = {$id}";
 		$result = $mysql->query($query)->fetchArray();
@@ -16,7 +17,9 @@ if (isset($_SESSION['id']) and $_SESSION['role']===1) {
 
 		include_once('../views/editProduct_view.php');
 	}
-	else {
+	else 
+	//Controller
+	{
 		$query = "UPDATE `product` SET `name`='{$_POST['product_name']}',
 		`catg`='{$_POST['product_catg']}',`price_component`='{$_POST['price_component']}',
 		`price`={$_POST['product_price']}";

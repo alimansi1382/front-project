@@ -1,8 +1,8 @@
 <?php
 if (isset($_SESSION['id']) and $_SESSION['role']===1) {
-    require_once('../db.php');
+    require_once("__init__.php");
     $id = $_GET["id"];
-    $mysql = new db('localhost','root','','frontproject');
+    $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
     error_reporting(E_ALL & ~E_NOTICE);
     if (!isset($_POST['submit'])) 
     {

@@ -1,7 +1,7 @@
 <header id="header">
         <div class="site-brand">
-            <img src="../assets/images/logo.png" alt="" class="image-brand">
-            <a href="../controllers/home_controller.php" class="link-brand">ماهرنگ</a>
+            <img src="<?php echo $baseroot;?>assets/images/logo.png" alt="" class="image-brand">
+            <a href="<?php echo $baseroot;?>controllers/home_controller.php" class="link-brand">ماهرنگ</a>
         </div>
         <div class="header-action">
             <i class="fa fa-user-circle-o"></i>

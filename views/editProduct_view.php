@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Styles -->
-    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
-    <!-- <link rel="stylesheet" href="../assets/css/editProduct.css"> -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <?php require_once('__init__.php'); ?>
     <title>چاپ ماهرنگ</title>
   </head>
   <body lang="fa">
@@ -47,7 +44,7 @@
                   <label for="product_image">تصویر محصول (امکان انتخاب چند عکس):</label>
                   <br>
                   <input type="file" name="product_image" id="product_image" class="input-file" value="">
-                  <img id="image_preview" src="../assets/images/products/<?php echo $result['image_src']; ?>" alt="">
+                  <img draggable="false" id="image_preview" src="../assets/images/products/<?php echo $result['image_src']; ?>" alt="">
               </div>
               <div class="input_sections">
                <label for="product_service">خدمات اضافه بر محصول :</label>

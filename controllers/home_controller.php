@@ -1,10 +1,6 @@
 <?php
-$plugins = glob('../*_plugin.php');
-
-foreach ($plugins as $plugin) {
-    include_once($plugin);
-}
-$mysql = new db('localhost','root','','frontproject');
+require_once("__init__.php");
+$mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
 $query = "SELECT * FROM `product`";
 $products = $mysql->query($query)->fetchAll();
 

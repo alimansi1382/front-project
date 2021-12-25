@@ -1,24 +1,21 @@
 <?php
-error_reporting(E_ALL & ~E_NOTICE);
+require_once("__init__.php");
 
 if ($_SESSION['role']===1) {
     if (!isset($_POST['submit'])) 
+    //View
     {
         include_once('../views/addProduct_view.php');
     }
-    else {
-        $plugins = glob('../*_plugin.php');
-
-        foreach ($plugins as $plugin) {
-            include_once($plugin);
-        }
-
+    else 
+    //Controller
+    {
         $name_servic = $_POST['name_servic'];
         $price_servic = $_POST['price_servic'];
         $icon_servic = $_POST['icon_servic'];
 
         // Add Product
-        $cdb = new db('localhost','root','','frontproject');
+        $cdb = new db($dbhost,$dbusername,$dbpassword,$dbname);
         $query = "INSERT INTO 
         product(name,catg,price_component,price,image_src)
         VALUES('{$_POST['product_name']}','{$_POST['product_catg']}','{$_POST['price_component']}',{$_POST['product_price']},'{$_POST['product_image']}')";

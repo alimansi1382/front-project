@@ -1,10 +1,11 @@
-@import url('./templates/main.css');
-@import url('./header.css');
-@import url('./navigation-bar.css');
-@import url('./footer.css');
-@import url('./container.css');
-@import url('./sidbar.css');
-@import url('./grid-template.css');
+@import url('templates/main.css');
+@import url('header.css');
+@import url('navigation-bar.css');
+@import url('footer.css');
+@import url('container.css');
+@import url('sidbar.css');
+@import url('grid-template.css');
+@import url('addProduct.css');
 
 @font-face {
     font-family: Vazir;
@@ -17,6 +18,6 @@ body{
     background-color: gainsboro;
     margin: 0;
 }
-body,select,input{
+body,input,textarea,button,select{
     font-family: vazir;
 }
