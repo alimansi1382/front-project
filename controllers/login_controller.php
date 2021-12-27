@@ -2,7 +2,7 @@
 require_once("__init__.php");
 
 if (!isset($_POST['submit'])) {
-    include_once('../views/login_view.php');
+    include_once($baseroot.'views/login_view.php');
 }else {
     $cdb = new db($dbhost,$dbusername,$dbpassword,$dbname);
     

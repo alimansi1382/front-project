@@ -51,3 +51,16 @@
     grid-template-columns: auto auto auto;
     margin-top: 10px;
 }
+.filled.card i{
+    font-size: larger;
+}
+.filled.card .far.fa-heart{
+    color: black;
+}
+.filled.card .fas.fa-heart{
+    color: red;
+}
+.filled.card .fa-bookmark{
+    color: black;
+
+}
