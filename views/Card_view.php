@@ -48,17 +48,17 @@
             <h3 class="page_content_title">سبد خرید</h3>
             <div class="Card_deatail_row grid-display grid-50-50">
                 <div class="Card_deatail_row_key">قیمت کل محصولات:</div>
-                <div class="Card_deatail_row_value">100000<span class="price_componant">ریال</span></div>
+                <div class="Card_deatail_row_value"><?php echo $allofPrice;?><span class="price_componant">ریال</span></div>
             </div>
             <div class="Card_deatail_row grid-display grid-50-50">
                 <div class="Card_deatail_row_key">تخفیف خورده:</div>
-                <div class="Card_deatail_row_value">100000<span class="price_componant">ریال</span></div>
+                <div class="Card_deatail_row_value">0<span class="price_componant">ریال</span></div>
             </div>
             <div class="Card_deatail_row grid-display grid-50-50">
                 <div class="Card_deatail_row_key">قیمت پرداختی:</div>
-                <div class="Card_deatail_row_value">100000<span class="price_componant">ریال</span></div>
+                <div class="Card_deatail_row_value"><?php echo $allofPrice;?><span class="price_componant">ریال</span></div>
             </div>
-            <a href="<?php echo $controllerroot ?>deatailOrder_controller.php" class="Card_deatail_btn btn btn-primary">ثبت سفارش</a>
+            <a href="<?php echo $controllerroot ?>SalesInvoice_controller.php" class="Card_deatail_btn btn btn-primary">ثبت سفارش</a>
     </section>
     <?php include_once('footer.php'); ?>
 
