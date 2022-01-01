@@ -15,13 +15,20 @@ if (!isset($_POST['submit'])) {
     // }
     if (count($result)>0) {
         //set sessions
-        foreach ($result as $key => $value) {
-            $_SESSION[$key] = $value;
+        Athuntication::loginUser($result);
+        $_SESSION['back_status'] = 200;
+        switch ($_SESSION['role']) {
+            case 'user':
+                header("Location:UserPanel_controller.php");
+                break;
+            case 'admin':
+                header("Location:{$baseroot}Admin/controller/Dashboard_controller.php");
+                break;
+            default:
+                echo "error";
         }
-
-        echo "<p>شما با موفقیت وارد شدید</p>";
-        echo "<a href='./home_controller.php'>خانه</a>";
     }else {
+        $_SESSION['back_status'] = 405;
         echo "<p>کاربری با این اطلاعات وجود ندارد</p>";
         echo "<a href='./home_controller.php'>خانه</a>";
     }

@@ -10,18 +10,13 @@
     <link rel="stylesheet" href="<?php echo $baseroot;?>assets/css/style.css">
     <?php include'__init__.php'; ?>
 </head>
-<body id="body-container" lang="fa">
+<body id="body-container" class="grid-100" lang="fa">
     <?php include_once('header.php'); ?>
-    <nav id="navigation-bar">
-        <ul class="list">
-            <li class="list_item"><a href="" class="link">خانه</a></li>
-            <li class="list_item"><a href="" class="link">محصولات پیشنهادی</a></li>
-            <li class="list_item"><a href="" class="link">تماس با ما</a></li>
-        </ul>
-    </nav>
-    <aside id="sidebar">
+    <?php include_once('TopNavigation.php'); ?>
+
+    <!-- <aside id="sidebar">
         فیلتر محصولات
-    </aside>
+    </aside> -->
     
     <main id="container">
         <div class="swiper">
@@ -48,9 +43,29 @@
             <?php
                 foreach($products as $product)
                 {
-                    $islike= isLike($mysql,$product['id']);
-                    $isbookmark = isBookmark($mysql,$product['id']);
-                    $iscontaincard = isContainCard($mysql,$product['id']);
+                    if(isset($_SESSION['id'])){
+                        $islike= isLike($mysql,$product['id']);
+                        $isbookmark = isBookmark($mysql,$product['id']);
+                        $iscontaincard = isContainCard($mysql,$product['id']);
+                    }
+
+                    $iconclassheart = 'far';
+                    if(isset($islike) and $islike){
+                        $iconclassheart = 'fas';
+                    }
+
+                    $iconclassbookmark = 'far';
+                    if(isset($isbookmark) and $isbookmark){
+                        $iconclassbookmark = 'fas';
+                    }
+
+                    $cardtext = "افزودن به سبد";
+                    $cardclass = "add";
+                    if(isset($iscontaincard) and $iscontaincard){
+                        $cardtext = "حذف از سبد";
+                        $cardclass = "remove";
+                    }
+
                     include '../assets/templates/ProductCard.php';
                 }
             ?>
