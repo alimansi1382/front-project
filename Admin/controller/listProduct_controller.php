@@ -1,15 +1,5 @@
 <?php
-//admin validation
-if (!isset($_SESSION['id']) and !$_SESSION['role']===1) {
-    die('Not Access');
-}
-
-$baseroot = '..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR;
-$plugins = glob($baseroot.'*_plugin.php');
-
-foreach ($plugins as $plugin) {
-    require_once($plugin);
-}
+require "__init__.php";
 
 $mysql = new db('localhost','root','','frontproject');
 
@@ -20,6 +10,4 @@ if ($mysql->query($query)) {
     $users = $mysql->query($query)->fetchAll();
 }
 
-include_once('listProduct_view.php');
-
-
+include_once($viewroot.'listProduct_view.php');
