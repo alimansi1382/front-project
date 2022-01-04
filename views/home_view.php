@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="<?php echo $baseroot;?>assets/css/style.css">
     <?php include'__init__.php'; ?>
 </head>
-<body id="body-container" class="grid-100" lang="fa">
+<body id="body-container" class="grid-100 grid-row-container">
     <?php include_once('header.php'); ?>
     <?php include_once('TopNavigation.php'); ?>
 
@@ -39,7 +39,7 @@
         <div class="swiper-scrollbar"></div>
         </div>
 
-        <div class="cards-section">
+        <div class="grid-display col-sm-1 col-md-2 col-lg-4">
             <?php
                 foreach($products as $product)
                 {
@@ -71,12 +71,28 @@
             ?>
         </div>
     </main>
+
+    <section class="chat"> 
+        <div class="chat_container">
+            <div class="header">
+                پشتیبانی ماهرنگ
+            </div>
+            <div id="chat_container">
+            </div>
+            <div class="footer">
+                <form action="<?php $controllerroot ?>chatController_controller.php" method="post" id="Chatform">
+                    <input type="text" name="message" id="Chatmessage">
+                    <input type="submit" value="ارسال">
+                </form>
+            </div>
+        </div>
+        <div class="chat_icon">
+            <i class="fas fa-comments"></i>
+        </div>
+    </section>
     
-    
+    <p id="Small_modal_Message" class="small_modal_message"><i class="fas fa-times"></i><span class="message"></span></p>
     <?php include_once('footer.php'); ?>
-    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <script src="<?php echo $baseroot;?>assets/js/main.js"></script>
-    <script src="<?php echo $baseroot;?>assets/js/templates/card.js"></script>
+    <?php include_once('__script__.php'); ?>
 </body>
 </html>

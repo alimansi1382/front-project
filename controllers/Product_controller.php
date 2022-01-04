@@ -7,6 +7,7 @@ $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
 $query = "SELECT * FROM `product` WHERE id=?";
 $product = $mysql->query($query,$id)->fetchArray();
 
+$isContainCard = false;
 
 function isContainCard($mysql,$id)
 {
@@ -17,6 +18,19 @@ function isContainCard($mysql,$id)
     }
     return false;
 }
-$isContainCard = isContainCard($mysql,$id);
+if (isset($_SESSION['id'])) {
+    $isContainCard = isContainCard($mysql,$id);
+}
+
+function namebyid($mysql,$id)
+{
+    $query = "SELECT  `firstname`, `lastname` FROM `user` WHERE id=?";
+    $user = $mysql->query($query,$id)->fetchArray();
+    return $user['firstname']." ".$user['lastname'];
+}
+
+$mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
+$query = "SELECT * FROM `comment` WHERE pid=?";
+$allCommentProduct = $mysql->query($query,$id)->fetchAll();
 
 include $viewroot.'Product_view.php';
